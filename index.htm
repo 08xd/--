@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لعبة تخمين السؤال العشوائي</title>
+<style>
+  body {
+    background: url('https://i.ibb.co/h9pP52v/pixel-night-japan.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff; /* لون الخط */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* ظل النص لتحسين القراءة */
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  #questionDisplay {
+    background-color: rgba(0, 0, 0, 0.7); /* لون خلفية الصندوق */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  button {
+    background-color: #4CAF50; /* لون خلفية الزر */
+    color: #fff; /* لون النص في الزر */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #45a049; /* تغيير لون خلفية الزر عندما يتم تحويل المؤشر فوقه */
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div id="questionDisplay"></div>
+  <button id="randomButton">احصل على سؤال عشوائي</button>
+</div>
+
+<script>
+  const questions = [
+    "اخر هواجهه غير لطيفه صدمتك؟",
+    "اكتر لحظه مضحكه في حياتك؟",
+    "قول سبع اشياء مختلفه بتحبها عن نفسك",
+    "لو عندك فرصه تسافر لي اي مكان بالعالم وتشوف المكان اول ماتتقاعد، فين هتروح؟",
+    "مين احسن صديق في حياتك وليه؟",
+    "اكتر حاجه بتندم عليها انك عملتها؟",
+    "مين اكتر حد او حد ف الناس انت كرهتهم وليه",
+    "اخر حاجه ضايقتك وياك",
+    "اذا طلبت منك ابوك ع الفطور بكره الصبح ماتجاوب؟",
+    "اول حاجه بتسويها لو انتي تفوتي بمليون؟",
+    "اخر فيلم نزل شاهدته وعجبك وليه؟",
+    "لو بتختاري واحد اكتر حاجه مهمه في حياتك، هتختاري الحب ام المال وليه؟",
+    "لو عليكي تشوفي حد عزيز عليكي قدامك متعتمدي علي الشكل ولا علي الخلق وليه",
+    "اكتر حاجه ف الدنيا بتفتح احساس الامان للناس ؟",
+    "الوقت بيعدي ولسه اسفل نقشات في دماغك لازم تقفلها؟",
+    "لو اقدر اغير مليش علي ارض بسرعه كنت هغير ايه وليه؟",
+    "حساب عقلك علي اقوي مشاعر القلق ايه؟",
+    "لو كان عندك امل وحدة ف حياتك بقي هيبقي في ايه؟",
+    "في نظرك اكتر بلد محتاجه ثوره اجتماعيه وسياسيه بقيت بسبب الديكتاتوريه والحاله الاقتصاديه مؤثره؟",
+  ];
+
+  const randomButton = document.getElementById('randomButton');
+  const questionDisplay = document.getElementById('questionDisplay');
+
+  randomButton.addEventListener('click', () => {
+    const randomIndex = Math.floor(Math.random() * questions.length);
+    const randomQuestion = questions[randomIndex];
+    questionDisplay.textContent = randomQuestion;
+  });
+</script>
+</body>
+</html>
